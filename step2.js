@@ -18,9 +18,14 @@ function cat(path) {
 
 async function webCat(path) {
 
-    // read the url located at path
-    let resp = await axios.get(path);
-    console.log(resp.data)
+    try {
+        // read the url located at path
+        let resp = await axios.get(path);
+        console.log(resp.data)
+    }
+    catch (err) {
+        console.log('Error! ', err)
+    }
 }
 
 
